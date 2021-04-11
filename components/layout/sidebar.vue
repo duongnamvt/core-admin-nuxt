@@ -8,12 +8,16 @@
         </div>
         <a-menu mode="inline" :open-keys="openKeys" style="width: 256px" class="h-full" @openChange="onOpenChange">
             <a-menu-item class="flex items-center">
-                <a-icon type="home" />
+                <nuxt-link to="/">
+                  <a-icon type="home" />
                     Dashboard
+                </nuxt-link>
             </a-menu-item>
             <a-menu-item class="flex items-center">
-                <a-icon type="file" />
+               <nuxt-link to="gallery">
+                 <a-icon type="picture" />
                     Gallery
+               </nuxt-link>
             </a-menu-item>
             <a-menu-item class="flex items-center">
                 <a-icon type="dollar" />
@@ -39,7 +43,10 @@
             <a-sub-menu key="users">
                 <span slot="title"><a-icon type="user" /><span>Users</span></span>
                 <a-menu-item key="userlist">
-                    List
+                    <nuxt-link to="/users">
+                        <a-icon type="ordered-list" />
+                        List
+                    </nuxt-link>
                 </a-menu-item>
                 <a-sub-menu key="role" title="Role">
                     <a-menu-item key="roleList">
