@@ -5,8 +5,8 @@
                 @back="() => $router.go(-1)"
                 style="border: 1px solid rgb(235, 237, 240)"
                 class=""
-                title="User"
-                sub-title="List of user"
+                title="Currencies"
+                sub-title="List of currency"
             >
                 <template slot="extra">
                 <a-dropdown>
@@ -31,19 +31,6 @@
         <div class="w-full flex flex-wrap p-2">
            <div class="w-full flex flex-wrap p-3">
                <div class="w-full">
-                    <div class="w-full flex flex-wrap">
-                        <section class="w-1/5 flex">
-                            <a-select mode="tags" style="width: 100%" placeholder="Select Roles" @change="handleChange">
-                                <a-select-option v-for="i in 5" :key="i.toString()">
-                                    {{ i }}
-                                </a-select-option>
-                            </a-select>
-                        </section>
-                        <section class="md:ml-4">
-                            Create Time: 
-                             <a-range-picker class="ml-2 w-64" @change="onChange" />
-                        </section>
-                    </div>
                     <div class="w-full flex flex-wrap mb-4 mt-2">
                             <div class="flex-grow">
                                 <a-button type="danger" :disabled="!hasSelected" :loading="loading" @click="start">
@@ -74,7 +61,7 @@
                         <a slot="image" slot-scope="data">
                             <img class="h-10" :src="data"/>
                         </a>
-                        <nuxt-link to="/users/1" slot="name" slot-scope="data">{{ data }}</nuxt-link>
+                        <nuxt-link :to="'/currencies/' + record.id" slot="name" slot-scope="data, record">{{ data }}</nuxt-link>
                         <a slot="date" slot-scope="data">{{ data }}</a>
                     </a-table>
                </div>
@@ -96,25 +83,55 @@ const columns = [
     scopedSlots: { customRender: 'name' },
   },
   {
-    title: 'Email',
-    dataIndex: 'email',
+    title: 'Symbol',
+    dataIndex: 'symbol',
   },
   {
-    title: 'Date Created',
-    dataIndex: 'date',
+    title: 'Balance',
+    dataIndex: 'balance'
+  },
+  {
+      title: 'Deposit Fee',
+      dataIndex: 'depositFee',
+  },
+  {
+      title: 'Withdraw Fee',
+      dataIndex: 'withdrawFee',
+  },
+  {
+    title: 'Active',
+    dataIndex: 'active',
   },
 ];
 const data = [];
-for (let i = 0; i < 100; i++) {
-  data.push({
-    key: i,
-    image: `https://randomuser.me/api/portraits/men/${i}.jpg`,
-    name: `Edward King ${i}`,
-    email: `meo${i}@gmail.com`,
-    date: new Date().toLocaleString("en-US")
-  });
-}
+data.push({
+    key: 1,
+    id: 1,
+    image: `https://demo.vutatech.vn/images/currencies/eth.png`,
+    name: `Ethereum`,
+    symbol: `ETH`,
+    balance: 0,
+    depositFee: 0,
+    withdrawFee: 0,
+    active: true
+});
+data.push({
+    key: 2,
+    id: 2,
+    image: `https://demo.vutatech.vn/images/currencies/usdt.png`,
+    name: `Tether USDT (ERC20)`,
+    symbol: `USDT`,
+    balance: 0,
+    depositFee: 0,
+    withdrawFee: 0,
+    active: true
+});
+
+import treeSelect from '~/components/widget/treeSelect'
 export default {
+    components: {
+        treeSelect
+    },
     data(){
         return{
             data,

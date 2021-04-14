@@ -5,8 +5,8 @@
                 @back="() => $router.go(-1)"
                 style="border: 1px solid rgb(235, 237, 240)"
                 class=""
-                title="User"
-                sub-title="List of user"
+                title="Post"
+                sub-title="List of post"
             >
                 <template slot="extra">
                 <a-dropdown>
@@ -32,12 +32,8 @@
            <div class="w-full flex flex-wrap p-3">
                <div class="w-full">
                     <div class="w-full flex flex-wrap">
-                        <section class="w-1/5 flex">
-                            <a-select mode="tags" style="width: 100%" placeholder="Select Roles" @change="handleChange">
-                                <a-select-option v-for="i in 5" :key="i.toString()">
-                                    {{ i }}
-                                </a-select-option>
-                            </a-select>
+                        <section class="w-2/5 flex">
+                            <tree-select class="w-full"></tree-select>
                         </section>
                         <section class="md:ml-4">
                             Create Time: 
@@ -114,7 +110,11 @@ for (let i = 0; i < 100; i++) {
     date: new Date().toLocaleString("en-US")
   });
 }
+import treeSelect from '~/components/widget/treeSelect'
 export default {
+    components: {
+        treeSelect
+    },
     data(){
         return{
             data,

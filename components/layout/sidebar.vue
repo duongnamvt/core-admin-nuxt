@@ -20,8 +20,10 @@
                </nuxt-link>
             </a-menu-item>
             <a-menu-item class="flex items-center">
-                <a-icon type="dollar" />
+                <nuxt-link to="/currencies">
+                  <a-icon type="dollar" />
                     Currency
+                </nuxt-link>
             </a-menu-item>
             <a-sub-menu key="">
                 <span slot="title"><a-icon type="appstore" /><span>Finance Management</span></span>
@@ -50,24 +52,30 @@
                 </a-menu-item>
                 <a-sub-menu key="role" title="Role">
                     <a-menu-item key="roleList">
-                        List
-                    </a-menu-item>
-                    <a-menu-item key="federalism">
-                        Federalism (Phân quyền)
+                        <nuxt-link to="/users/role">
+                          <a-icon type="ordered-list" />
+                          List
+                      </nuxt-link>
                     </a-menu-item>
                 </a-sub-menu>
             </a-sub-menu>
             <a-sub-menu key="article">
                 <span slot="title"><a-icon type="font-colors" /><span>Articles</span></span>
                 <a-menu-item key="articlelist">
-                    List
+                    <nuxt-link to="/post">
+                      <a-icon type="ordered-list" />
+                      List
+                    </nuxt-link>
                 </a-menu-item>
                 <a-menu-item key="articleAnalytic">
                     Analytic
                 </a-menu-item>
                 <a-sub-menu key="articleCategory" title="Category">
                     <a-menu-item key="articleCategoryList">
-                        List
+                        <nuxt-link to="/post/categories">
+                          <a-icon type="ordered-list" />
+                          List
+                        </nuxt-link>
                     </a-menu-item>
                 </a-sub-menu>
             </a-sub-menu>

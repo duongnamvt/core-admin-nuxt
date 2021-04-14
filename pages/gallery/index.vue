@@ -30,7 +30,7 @@
     </div>
     <div class="w-full flex flex-wrap content p-3">
       <div class="flex flex-wrap w-full px-2">
-        <div class="w-1/6 shadow-md p-3">
+        <div class="w-1/5 shadow-md p-3">
             <a-directory-tree multiple default-expand-all @select="onSelect" @expand="onExpand">
                 <a-tree-node key="0-0" title="Ảnh 2020">
                 <a-tree-node key="0-0-0" title="Du lịch điện biên" is-leaf />
@@ -42,7 +42,7 @@
                 </a-tree-node>
             </a-directory-tree>
         </div>
-        <div class="w-5/6 md:pl-4">
+        <div class="w-4/5 md:pl-4">
             <div class="flex flex-wrqp w-full shadow-md p-4">
                 <div class="flex flex-wrap w-full">
                     <div class="w-full">
