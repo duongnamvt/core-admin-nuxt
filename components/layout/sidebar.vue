@@ -27,8 +27,17 @@
             </a-menu-item>
             <a-sub-menu key="">
                 <span slot="title"><a-icon type="appstore" /><span>Finance Management</span></span>
-                <a-menu-item key="5">
-                    List
+                <a-menu-item key="f-deposit">
+                    <nuxt-link to="/finance/deposit">
+                        <a-icon type="ordered-list" />
+                        Deposit
+                    </nuxt-link>
+                </a-menu-item>
+                <a-menu-item key="f-withdraw">
+                    <nuxt-link to="/finance/withdraw">
+                        <a-icon type="ordered-list" />
+                        Withdraw
+                    </nuxt-link>
                 </a-menu-item>
                 <a-menu-item key="6">
                     KYC Request
@@ -82,36 +91,63 @@
             <a-sub-menu key="market">
                 <span slot="title"><a-icon type="property-safety" /><span>Market</span></span>
                 <a-menu-item key="symbolList">
-                    Avaible Symbol
+                    <nuxt-link to="/market/symbol">
+                      <a-icon type="ordered-list" />
+                      Avaiable Symbol
+                    </nuxt-link>
                 </a-menu-item>
                 <a-menu-item key="trackBalance">
-                    Tracking Balance
+                    <nuxt-link to="/market/trackingbalance">
+                      <a-icon type="ordered-list" />
+                      Tracking Balance
+                    </nuxt-link>
                 </a-menu-item>
                 <a-menu-item key="copyTrading">
-                    Copy Trading
+                    <nuxt-link to="/market/copytrade">
+                      <a-icon type="ordered-list" />
+                      Copy trading
+                    </nuxt-link>
                 </a-menu-item>
                 <a-menu-item key="handEdit">
-                    Hand Edit
+                    <nuxt-link to="/market/handedit">
+                      <a-icon type="ordered-list" />
+                      Handedit
+                    </nuxt-link>
                 </a-menu-item>
                 <a-sub-menu key="historyTrade" title="History">
                     <a-menu-item key="historyTrade">
+                      <nuxt-link to="/market/history">
+                        <a-icon type="ordered-list" />
                         Trade
+                      </nuxt-link>
                     </a-menu-item>
                     <a-menu-item key="historyHandEdit">
-                        Hand Edit
+                        <nuxt-link to="/market/history/">
+                          <a-icon type="ordered-list" />
+                          Handedit
+                        </nuxt-link>
                     </a-menu-item>
                 </a-sub-menu>
             </a-sub-menu>
             <a-sub-menu key="setting">
                 <span slot="title"><a-icon type="setting" /><span>Setting</span></span>
                 <a-menu-item key="settingTradingFee">
-                    Trading fee
+                    <nuxt-link to="/settings/tradingfee">
+                      <a-icon type="ordered-list" />
+                      Trading Fee
+                    </nuxt-link>
                 </a-menu-item>
                 <a-menu-item key="settingGeneral">
-                    General
+                    <nuxt-link to="/settings/general">
+                      <a-icon type="ordered-list" />
+                      General
+                    </nuxt-link>
                 </a-menu-item>
                 <a-menu-item key="settingNoted">
-                    Noted - Maintenance
+                    <nuxt-link to="/settings/maintenance">
+                      <a-icon type="ordered-list" />
+                      Noted-Maintenance
+                    </nuxt-link>
                 </a-menu-item>
             </a-sub-menu>
         </a-menu>

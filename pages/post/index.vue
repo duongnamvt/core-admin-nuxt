@@ -11,7 +11,7 @@
                 <template slot="extra">
                 <a-dropdown>
                     <a class="ant-dropdown-link" @click="(e) => e.preventDefault()">
-                    Hover me <a-icon type="down" />
+                        Hover me <a-icon type="down" />
                     </a>
                     <a-menu slot="overlay">
                     <a-menu-item>
@@ -70,7 +70,7 @@
                         <a slot="image" slot-scope="data">
                             <img class="h-10" :src="data"/>
                         </a>
-                        <nuxt-link to="/users/1" slot="name" slot-scope="data">{{ data }}</nuxt-link>
+                        <nuxt-link to="/post/1" slot="name" slot-scope="data">{{ data }}</nuxt-link>
                         <a slot="date" slot-scope="data">{{ data }}</a>
                     </a-table>
                </div>
