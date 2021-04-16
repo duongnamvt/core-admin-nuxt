@@ -88,6 +88,12 @@
                     </a-menu-item>
                 </a-sub-menu>
             </a-sub-menu>
+            <a-menu-item class="flex items-center">
+                <nuxt-link to="/page">
+                  <a-icon type="dollar" />
+                    Page
+                </nuxt-link>
+            </a-menu-item>
             <a-sub-menu key="market">
                 <span slot="title"><a-icon type="property-safety" /><span>Market</span></span>
                 <a-menu-item key="symbolList">
