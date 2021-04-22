@@ -14,7 +14,7 @@
                 </nuxt-link>
             </a-menu-item>
             <a-menu-item class="flex items-center">
-               <nuxt-link to="gallery">
+               <nuxt-link to="/gallery">
                  <a-icon type="picture" />
                     Gallery
                </nuxt-link>
